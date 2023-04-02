@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Jovians Website </title>
     <style>
       
@@ -17,6 +20,13 @@
         margin: 0 auto ;
         
       }
+     .bgimage{
+       background-repeat: no-repeat;
+       background-size:1550px 758px;
+       
+     }
+     
+      
 
      
 
@@ -24,14 +34,30 @@
     </style>
     <body> 
       <div  id='Container'>
-        <h1 align="center"> Jovian Careers </h1> 
+        <h1 align="center"> {{company_name}} Careers </h1> 
         <img src="https://yoga-project-1.srishtigarg5.repl.co/static/banner%20.jpeg" id="banner" >
         <h2 align="center"> About us </h2>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
         <h2> Job Openings</h2>
-        <p> TODO- Tell abt jobs </p>
-        <div style="text-align:center;">
+        
+      <div>
+        {% for job in jobs %}
+          <div class="border-bottom" style="margin-bottom:16px;padding-bottom:4px;" >
+            <h4 style="color:rgba(120, 120, 120); margin-bottom: 4px;">{{job['Position']}}</h4>
+            <div> Location: {{job['Location']}}</div>
+            <button type="button" class="btn btn-outline-primary">Apply</button>
+            
+          </div>
+        
+        {% endfor %}
+        
+      </div>
+        
+        
+        
+        
+        <div style="text-align:center">
         <button> Contact Us </button>
         </div>
       </div>
