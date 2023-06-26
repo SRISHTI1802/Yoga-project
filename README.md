@@ -1,2 +1,2 @@
-# Yoga-project
-This is repository  for yoga project
+This repository is of flask project where i learnt to use css html and flask
+
